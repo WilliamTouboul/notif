@@ -35,9 +35,7 @@
                 if (result === 'granted') {
                     navigator.serviceWorker.ready.then(function (registration) {
                         // registration.showNotification('Notification with ServiceWorker');
-
-
-                        const my_notification = new Notification('Test Notification', {
+                        registration.showNotification('Test Notification', {
                             body: 'Ceci est une notification',
                             data: {
                                 hello: "world"
@@ -49,17 +47,17 @@
 
 
 
-                        my_notification.addEventListener('show', e => {
+                        registration.addEventListener('show', e => {
                             console.log(e);
                             //Event a l'apparition de la notif
                         });
 
-                        my_notification.addEventListener('close', e => {
+                        registration.addEventListener('close', e => {
                             console.log('close');
                             // Event a la fermutre de la notif
                         });
 
-                        my_notification.addEventListener('error', e => {
+                        registration.addEventListener('error', e => {
                             console.log('error');
                             // Fonctionne aussi sur l'utilisateur a bloqué les notifs
                         });
