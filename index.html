@@ -13,6 +13,7 @@
             box-sizing: border-box;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             width: 100vw;
@@ -22,7 +23,7 @@
 
 <body>
     <button id="button">CLICK ME</button>
-
+    <a href="phone.html">phone</a>
 
 
     <script>
@@ -49,7 +50,7 @@
                     });
 
                     my_notification.addEventListener('close', e => {
-                        console.log(e);
+                        console.log('close');
                         // Event a la fermutre de la notif
                     });
 
@@ -61,11 +62,9 @@
             })
         });
 
-
-
         // Des que la page n'est plus visible lance une notif qui s'actualise toutes les secondes.7
 
-        
+
         // Commenter le temps de tester sur tel 
 
         // document.addEventListener('visibilitychange', () => {
